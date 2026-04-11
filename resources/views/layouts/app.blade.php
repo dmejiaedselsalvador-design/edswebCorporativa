@@ -84,6 +84,12 @@
         bottom: 5px !important;
         right: 5% !important;
     }
+    #scrollToTopBtn {
+        bottom: 85px !important; /* Lo subimos un poco para que no choque con el botón del chat */
+        right: 5% !important;
+        width: 45px !important;
+        height: 45px !important;
+    }
 }
 
 
@@ -217,12 +223,23 @@
             menu.classList.toggle('hidden');
         });
     </script>
+ <!-- Boton Back to Top -->
+    <button id="scrollToTopBtn"
+    onclick="scrollToTop()"
+    class="hidden fixed bottom-24 right-5 bg-primary text-white w-12 h-12 rounded-full shadow-2xl hover:bg-slate-700 hover:scale-110 transition-all duration-300 z-50 flex items-center justify-center border border-white/20">
+    <i class="fa-solid fa-chevron-up text-xl"></i>
+</button>
 
     <!-- CHATBOT FLOAT -->
 <!-- BOTÓN FLOTANTE -->
 <button onclick="toggleChat()"
-    class="fixed bottom-5 right-5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white p-4 rounded-full shadow-xl hover:scale-110 transition z-50">
-    💬
+    class="fixed bottom-5 right-5 bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bold py-4 px-6 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 z-50 flex items-center gap-2 border border-white/20">
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+    </svg>
+
+    <span class="text-sm tracking-wide">EDS CHAT-BOT</span>
 </button>
 
 <!-- CHATBOT -->
@@ -329,7 +346,7 @@ function sendMessage(customMessage = null) {
 
         chatbox.innerHTML += `
             <div class="chat-message bot flex items-start gap-2 mb-4">
-                <img src="{{ asset('img/chatbot/eds_chat_bot.png')}}" class="w-9 h-9 rounded-full shadow-sm" alt="EDA">
+                <img src="{{ asset('img/chatbot/robot_de_chat_eds_v2.png')}}" class="w-9 h-9 rounded-full shadow-sm" alt="EDA">
                 <div id="${messageId}" class="message bg-blue-100 text-gray-800 px-3 py-2 rounded-2xl rounded-tl-none max-w-[80%] text-sm shadow-sm border border-blue-200">
                     </div>
             </div>`;
@@ -386,6 +403,27 @@ function typeWriter(elementId, text) {
 function quickReply(text) {
     sendMessage(text);
 }
+</script>
+
+<script>
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+
+    // Mostrar el botón cuando el usuario baje 300px
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            scrollBtn.classList.remove("hidden");
+        } else {
+            scrollBtn.classList.add("hidden");
+        }
+    };
+
+    // Función para subir suavemente
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
 </script>
 
 </body>
