@@ -223,86 +223,143 @@
 <!-- INDUSTRIES -->
 <section class="py-24 bg-white dark:bg-slate-950">
     <div class="max-w-7xl mx-auto px-6 text-center">
-        <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-16">
+        <h2
+            class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-16 sm:text-5xl"
+        >
             Industries We Serve
         </h2>
 
-        <div class="grid md:grid-cols-3 gap-12">
-            <!-- AUTOMOTIVE -->
+        <div class="grid md:grid-cols-3 gap-8">
             <a
                 href="{{ route('web.industries', ['category' => 'automotive']) }}"
+                class="group relative block h-80 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-slate-100 dark:bg-slate-900"
             >
+                <img
+                    src="{{ asset('img/automotive/BMWM42025.png') }}"
+                    alt="Automotive industry illustration"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+
                 <div
-                    class="group relative overflow-hidden rounded-2xl cursor-pointer"
+                    class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-500 group-hover:from-black/85 group-hover:via-black/40"
+                ></div>
+
+                <div
+                    class="absolute inset-0 border-2 border-primary/0 rounded-3xl transition-colors duration-500 group-hover:border-primary/40"
+                ></div>
+
+                <div
+                    class="relative z-10 h-full flex flex-col justify-end p-8 text-white"
                 >
-                    <img
-                        src="{{ asset('img/automotive/BMWM42025.png') }}"
-                        class="w-full h-64 object-cover transition duration-700 group-hover:scale-110"
-                    />
-
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-slate-900/80"
-                    ></div>
-
-                    <div
-                        class="absolute inset-0 flex items-center justify-center"
+                        class="mb-3 text-primary opacity-80 transition group-hover:opacity-100 group-hover:-translate-y-1"
                     >
-                        <h3 class="text-white text-2xl font-bold">
-                            Automotive
-                        </h3>
+                        <svg
+                            class="w-7 h-7"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                            />
+                        </svg>
                     </div>
+
+                    <h3
+                        class="text-3xl font-bold tracking-tight transition-transform duration-500 group-hover:-translate-y-1"
+                    >
+                        Automotive
+                    </h3>
                 </div>
             </a>
 
-            <!-- APPLIANCE -->
             <a
                 href="{{ route('web.industries', ['category' => 'appliance']) }}"
+                class="group relative block h-80 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-slate-100 dark:bg-slate-900"
             >
+                <img
+                    src="{{ asset('img/homeAppliance/subzero-Appliance.png') }}"
+                    alt="Home appliance operation"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
                 <div
-                    class="group relative overflow-hidden rounded-2xl cursor-pointer"
+                    class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-500 group-hover:from-black/85 group-hover:via-black/40"
+                ></div>
+                <div
+                    class="absolute inset-0 border-2 border-primary/0 rounded-3xl transition-colors duration-500 group-hover:border-primary/40"
+                ></div>
+                <div
+                    class="relative z-10 h-full flex flex-col justify-end p-8 text-white"
                 >
-                    <img
-                        src="{{
-                            asset('img/homeAppliance/subzero-Appliance.png')
-                        }}"
-                        class="w-full h-64 object-cover transition duration-700 group-hover:scale-110"
-                    />
-
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-slate-900/80"
-                    ></div>
-
-                    <div
-                        class="absolute inset-0 flex items-center justify-center"
+                        class="mb-3 text-primary opacity-80 transition group-hover:opacity-100 group-hover:-translate-y-1"
                     >
-                        <h3 class="text-white text-2xl font-bold">Appliance</h3>
+                        <svg
+                            class="w-7 h-7"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"
+                            />
+                        </svg>
                     </div>
+                    <h3
+                        class="text-3xl font-bold tracking-tight transition-transform duration-500 group-hover:-translate-y-1"
+                    >
+                        Appliance
+                    </h3>
                 </div>
             </a>
 
-            <!-- COMMERCIAL -->
             <a
                 href="{{ route('web.industries', ['category' => 'commercial']) }}"
+                class="group relative block h-80 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-slate-100 dark:bg-slate-900"
             >
+                <img
+                    src="{{ asset('img/commercialVehicle/BUSYellow.png') }}"
+                    alt="Commercial vehicle validation"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
                 <div
-                    class="group relative overflow-hidden rounded-2xl cursor-pointer"
+                    class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-500 group-hover:from-black/85 group-hover:via-black/40"
+                ></div>
+                <div
+                    class="absolute inset-0 border-2 border-primary/0 rounded-3xl transition-colors duration-500 group-hover:border-primary/40"
+                ></div>
+                <div
+                    class="relative z-10 h-full flex flex-col justify-end p-8 text-white"
                 >
-                    <img
-                        src="{{ asset('img/commercialVehicle/BUSYellow.png') }}"
-                        class="w-full h-64 object-cover transition duration-700 group-hover:scale-110"
-                    />
-
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-slate-900/80"
-                    ></div>
-
-                    <div
-                        class="absolute inset-0 flex items-center justify-center"
+                        class="mb-3 text-primary opacity-80 transition group-hover:opacity-100 group-hover:-translate-y-1"
                     >
-                        <h3 class="text-white text-2xl font-bold">
-                            Commercial Vehicles
-                        </h3>
+                        <svg
+                            class="w-7 h-7"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                            />
+                        </svg>
                     </div>
+                    <h3
+                        class="text-3xl font-bold tracking-tight transition-transform duration-500 group-hover:-translate-y-1"
+                    >
+                        Commercial Vehicles
+                    </h3>
                 </div>
             </a>
         </div>
@@ -378,133 +435,177 @@
 <!-- CAPABILITIES -->
 <section class="py-24 bg-white dark:bg-slate-950">
     <div class="max-w-7xl mx-auto px-6">
-        <!-- HEADER -->
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-black text-slate-900 dark:text-white">
+            <h2
+                class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
+            >
                 Core Capabilities
             </h2>
-            <p class="text-slate-500 mt-4 max-w-2xl mx-auto">
-                Advanced wire harness solutions from engineering to full-scale
-                production and quality validation.
+            <p
+                class="mt-4 text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+            >
+                End-to-end wire harness solutions. Precision engineering,
+                high-volume production, and rigorous quality validation.
             </p>
         </div>
 
-        <!-- GRID -->
-        <div class="grid md:grid-cols-3 gap-10">
-            <!-- ENGINEERING -->
+        <div class="grid md:grid-cols-3 gap-8">
             <div
-                class="group relative h-[340px] rounded-2xl overflow-hidden cursor-pointer"
+                class="group relative h-[400px] rounded-3xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 bg-slate-100 dark:bg-slate-900"
             >
                 <img
-                    src="{{ asset('img/ingenerio.jpg') }}"
-                    class="absolute w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                    src="{{
+                        asset(
+                            'img/engineering/harnes_regenerado_engineering.png'
+                        )
+                    }}"
+                    alt="Engineering capability illustration"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
 
-                <!-- overlay -->
                 <div
-                    class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent"
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 transition-opacity duration-500 group-hover:from-black/90 group-hover:via-black/50"
                 ></div>
 
-                <!-- glow -->
                 <div
-                    class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500"
+                    class="absolute inset-0 border-2 border-primary/0 rounded-3xl transition-colors duration-500 group-hover:border-primary/50"
+                ></div>
+
+                <div
+                    class="relative z-10 h-full flex flex-col justify-end p-8 text-white"
                 >
                     <div
-                        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-52 h-52 bg-primary/30 blur-3xl"
-                    ></div>
-                </div>
+                        class="mb-4 text-primary opacity-80 transition group-hover:opacity-100 group-hover:-translate-y-1"
+                    >
+                        <svg
+                            class="w-8 h-8"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                            />
+                        </svg>
+                    </div>
 
-                <!-- content -->
-                <div
-                    class="relative z-10 h-full flex flex-col justify-end p-6 text-white"
-                >
                     <h3
-                        class="text-2xl font-bold mb-2 transition group-hover:-translate-y-2"
+                        class="text-3xl font-bold tracking-tight transition-transform duration-500 group-hover:-translate-y-1"
                     >
                         Engineering
                     </h3>
-                    <p
-                        class="text-sm opacity-0 group-hover:opacity-100 transition duration-500"
+
+                    <div
+                        class="max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-3"
                     >
-                        Design and development of complex wiring harness systems
-                        with precision engineering.
-                    </p>
+                        <p class="text-base text-slate-200 leading-relaxed">
+                            Design and development of complex wiring harness
+                            systems with precision engineering.
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <!-- MANUFACTURING -->
             <div
-                class="group relative h-[340px] rounded-2xl overflow-hidden cursor-pointer"
+                class="group relative h-[400px] rounded-3xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 bg-slate-100 dark:bg-slate-900"
             >
                 <img
                     src="{{ asset('img/quality/quality2.jpg') }}"
-                    class="absolute w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                    alt="Manufacturing operation"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
-
                 <div
-                    class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent"
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 transition-opacity duration-500 group-hover:from-black/90 group-hover:via-black/50"
                 ></div>
-
                 <div
-                    class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500"
+                    class="absolute inset-0 border-2 border-primary/0 rounded-3xl transition-colors duration-500 group-hover:border-primary/50"
+                ></div>
+                <div
+                    class="relative z-10 h-full flex flex-col justify-end p-8 text-white"
                 >
                     <div
-                        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-52 h-52 bg-primary/30 blur-3xl"
-                    ></div>
-                </div>
-
-                <div
-                    class="relative z-10 h-full flex flex-col justify-end p-6 text-white"
-                >
+                        class="mb-4 text-primary opacity-80 transition group-hover:opacity-100 group-hover:-translate-y-1"
+                    >
+                        <svg
+                            class="w-8 h-8"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                            />
+                        </svg>
+                    </div>
                     <h3
-                        class="text-2xl font-bold mb-2 transition group-hover:-translate-y-2"
+                        class="text-3xl font-bold tracking-tight transition-transform duration-500 group-hover:-translate-y-1"
                     >
                         Manufacturing
                     </h3>
-                    <p
-                        class="text-sm opacity-0 group-hover:opacity-100 transition duration-500"
+                    <div
+                        class="max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-3"
                     >
-                        High-volume harness assembly using advanced production
-                        lines and precision tools.
-                    </p>
+                        <p class="text-base text-slate-200 leading-relaxed">
+                            High-volume harness assembly using advanced
+                            production lines and precision tools.
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <!-- QUALITY -->
             <div
-                class="group relative h-[340px] rounded-2xl overflow-hidden cursor-pointer"
+                class="group relative h-[400px] rounded-3xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 bg-slate-100 dark:bg-slate-900"
             >
                 <img
                     src="{{ asset('img/home/Tablero5SF.png') }}"
-                    class="absolute w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                    alt="Quality validation process"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
-
                 <div
-                    class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent"
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 transition-opacity duration-500 group-hover:from-black/90 group-hover:via-black/50"
                 ></div>
-
                 <div
-                    class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500"
+                    class="absolute inset-0 border-2 border-primary/0 rounded-3xl transition-colors duration-500 group-hover:border-primary/50"
+                ></div>
+                <div
+                    class="relative z-10 h-full flex flex-col justify-end p-8 text-white"
                 >
                     <div
-                        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-52 h-52 bg-primary/30 blur-3xl"
-                    ></div>
-                </div>
-
-                <div
-                    class="relative z-10 h-full flex flex-col justify-end p-6 text-white"
-                >
+                        class="mb-4 text-primary opacity-80 transition group-hover:opacity-100 group-hover:-translate-y-1"
+                    >
+                        <svg
+                            class="w-8 h-8"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                        </svg>
+                    </div>
                     <h3
-                        class="text-2xl font-bold mb-2 transition group-hover:-translate-y-2"
+                        class="text-3xl font-bold tracking-tight transition-transform duration-500 group-hover:-translate-y-1"
                     >
                         Quality
                     </h3>
-                    <p
-                        class="text-sm opacity-0 group-hover:opacity-100 transition duration-500"
+                    <div
+                        class="max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-3"
                     >
-                        Inspection, validation, and compliance ensuring
-                        reliability in every harness system.
-                    </p>
+                        <p class="text-base text-slate-200 leading-relaxed">
+                            Inspection, validation, and compliance ensuring
+                            reliability in every harness system.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -927,15 +1028,20 @@
 </section>
 
 <!-- Locations Section -->
-<section id="locations" class="py-16 bg-gray-900 text-white">
-    <div class="max-w-6xl mx-auto px-6">
-        <!-- Title -->
-        <h2 class="text-3xl font-bold mb-10 text-center">Our Locations</h2>
+<section id="locations" class="py-24 bg-slate-950 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold tracking-tight sm:text-5xl">
+                Our Locations
+            </h2>
+            <p class="text-slate-400 mt-4">
+                Strategic manufacturing and distribution points across North and
+                Central America.
+            </p>
+        </div>
 
-        <div class="grid lg:grid-cols-2 gap-10">
-            <!-- LEFT: Locations -->
+        <div class="grid lg:grid-cols-2 gap-12">
             <div class="grid sm:grid-cols-2 gap-6">
-                <!-- Corporate HQ -->
                 <div
                     onclick="
                         changeMap(
@@ -943,21 +1049,26 @@
                             '765 N Target Range Road, Nogales AZ 85621',
                         )
                     "
-                    class="location-card cursor-pointer bg-blue-600 border border-blue-400 scale-105 rounded-xl p-5 transition"
+                    class="location-card cursor-pointer bg-blue-600 border border-blue-400 scale-105 rounded-2xl p-6 transition-all duration-300 shadow-lg shadow-blue-900/20"
                 >
-                    <div class="flex items-start gap-3">
-                        <span class="text-white text-xl">📍</span>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">📍</span>
                         <div>
-                            <h3 class="font-semibold">
+                            <h3 class="font-bold text-lg leading-tight">
                                 Corporate HQ & Distribution
                             </h3>
-                            <p class="text-sm text-white/80">Nogales, AZ USA</p>
-                            <p class="text-xs text-white/60">110,000 SQ FT</p>
+                            <p class="text-sm text-white/90 mt-1">
+                                Nogales, AZ USA
+                            </p>
+                            <p
+                                class="inline-block mt-2 px-2 py-1 bg-white/20 rounded text-[10px] font-bold tracking-wider uppercase"
+                            >
+                                110,000 SQ FT
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Magdalena -->
                 <div
                     onclick="
                         changeMap(
@@ -965,21 +1076,26 @@
                             'Av. Niños Héroes 1051, Magdalena de Kino, Sonora, Mexico',
                         )
                     "
-                    class="location-card cursor-pointer bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition"
+                    class="location-card cursor-pointer bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 shadow-xl"
                 >
-                    <div class="flex items-start gap-3">
-                        <span class="text-blue-400 text-xl">📍</span>
+                    <div class="flex items-start gap-4">
+                        <span class="text-blue-400 text-2xl">📍</span>
                         <div>
-                            <h3 class="font-semibold">Manufacturing</h3>
-                            <p class="text-sm text-gray-300">
+                            <h3 class="font-bold text-lg leading-tight">
+                                Manufacturing
+                            </h3>
+                            <p class="text-sm text-slate-400 mt-1">
                                 Magdalena, Sonora MX
                             </p>
-                            <p class="text-xs text-gray-400">135,000 SQ FT</p>
+                            <p
+                                class="inline-block mt-2 px-2 py-1 bg-white/10 rounded text-[10px] font-bold tracking-wider uppercase"
+                            >
+                                135,000 SQ FT
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- M3 -->
                 <div
                     onclick="
                         changeMap(
@@ -987,21 +1103,26 @@
                             'Ave Prolongacion Alvaro Obregon 3673, Nogales Sonora Mexico',
                         )
                     "
-                    class="location-card cursor-pointer bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition"
+                    class="location-card cursor-pointer bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 shadow-xl"
                 >
-                    <div class="flex items-start gap-3">
-                        <span class="text-blue-400 text-xl">📍</span>
+                    <div class="flex items-start gap-4">
+                        <span class="text-blue-400 text-2xl">📍</span>
                         <div>
-                            <h3 class="font-semibold">M3</h3>
-                            <p class="text-sm text-gray-300">
+                            <h3 class="font-bold text-lg leading-tight">
+                                M3 Plant
+                            </h3>
+                            <p class="text-sm text-slate-400 mt-1">
                                 Nogales, Sonora MX
                             </p>
-                            <p class="text-xs text-gray-400">Zona Industrial</p>
+                            <p
+                                class="inline-block mt-2 px-2 py-1 bg-white/10 rounded text-[10px] font-bold tracking-wider uppercase"
+                            >
+                                54,000 SQ FT
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- El Salvador -->
                 <div
                     onclick="
                         changeMap(
@@ -1009,39 +1130,49 @@
                             'RH6H+562, Ciudad Arce, La Libertad, El Salvador',
                         )
                     "
-                    class="location-card cursor-pointer bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition"
+                    class="location-card cursor-pointer bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 shadow-xl"
                 >
-                    <div class="flex items-start gap-3">
-                        <span class="text-blue-400 text-xl">📍</span>
+                    <div class="flex items-start gap-4">
+                        <span class="text-blue-400 text-2xl">📍</span>
                         <div>
-                            <h3 class="font-semibold">EDS El Salvador</h3>
-                            <p class="text-sm text-gray-300">
+                            <h3 class="font-bold text-lg leading-tight">
+                                EDS El Salvador
+                            </h3>
+                            <p class="text-sm text-slate-400 mt-1">
                                 Ciudad Arce, La Libertad
                             </p>
-                            <p class="text-xs text-gray-400">American Park</p>
+                            <p
+                                class="inline-block mt-2 px-2 py-1 bg-white/10 rounded text-[10px] font-bold tracking-wider uppercase"
+                            >
+                                55,000 SQ FT
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- RIGHT: Map -->
             <div
-                class="w-full h-[400px] rounded-xl overflow-hidden border border-white/10 shadow-lg"
+                class="w-full h-[450px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative"
             >
                 <iframe
                     id="mapFrame"
-                    src="https://www.google.com/maps?q=765 N Target Range Road, Nogales AZ 85621&output=embed"
+                    src="https://maps.google.com/maps?q=765%20N%20Target%20Range%20Road,%20Nogales%20AZ%2085621&t=&z=13&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
-                    style="border: 0"
+                    style="
+                        border: 0;
+                        filter: grayscale(1) invert(0.9) contrast(1.2);
+                    "
                     loading="lazy"
                 >
                 </iframe>
+                <div
+                    class="absolute inset-0 pointer-events-none border-[12px] border-slate-950/20 rounded-3xl"
+                ></div>
             </div>
         </div>
     </div>
 </section>
-
 <!-- Script -->
 
 <script>

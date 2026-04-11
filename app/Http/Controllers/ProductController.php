@@ -39,20 +39,31 @@ class ProductController extends Controller
     //agregar vista publicar producto
 public function IndexProduct(Request $request)
 {
-    // 1. Obtenemos las categorías para el sidebar (sin paginar)
+    // 1. Obtenemos las categorías para el sidebar
     $categories = Category::has('products')->get();
 
-    // 2. Obtenemos los productos paginados y filtrados
+    // 2. Iniciamos la consulta de productos activos
     $query = Product::where('is_active', true)->with(['category', 'images']);
 
-    // Filtro por categoría si el usuario hace clic (opcional, mejora la carga)
-    if ($request->has('category') && $request->category !== 'All') {
+    // --- NUEVO: Filtro de Búsqueda Global ---
+    if ($request->filled('search')) {
+        $search = $request->search;
+        $query->where(function($q) use ($search) {
+            $q->where('name', 'LIKE', "%{$search}%")
+              ->orWhere('description', 'LIKE', "%{$search}%")
+              ->orWhere('part_number', 'LIKE', "%{$search}%"); // Ajusta según tus columnas
+        });
+    }
+
+    // Filtro por categoría (Mantenemos tu lógica pero mejorada con filled)
+    if ($request->filled('category') && $request->category !== 'All') {
         $query->whereHas('category', function($q) use ($request) {
             $q->where('name', $request->category);
         });
     }
 
-    $products = $query->latest()->paginate(15);
+    // Aumentamos un poco el número de productos  para que se vea mejor el grid
+    $products = $query->latest()->paginate(12)->withQueryString();
 
     return view('web.product.producList', compact('categories', 'products'));
 }
@@ -73,6 +84,7 @@ public function store(Request $request)
         'stock' => 'required|integer|min:0',
         'category_id' => 'nullable|exists:categories,id',
         'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Solo imágenes reales
+        'ebay_url' => 'nullable|url',
     ]);
 
     $product = Product::create([
@@ -81,6 +93,7 @@ public function store(Request $request)
         'price' => $data['price'],
         'stock' => $data['stock'],
         'category_id' => $data['category_id'] ?? null,
+        'ebay_url' => $data['ebay_url'] ?? null,
     ]);
 
     if ($request->hasFile('images')) {
@@ -151,6 +164,9 @@ public function store(Request $request)
         'stock' => 'required|integer|min:0',
         'category_id' => 'nullable|exists:categories,id',
         'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+  'ebay_url' => 'nullable|url',
+        
+
     ]);
 
     $product->update($data);

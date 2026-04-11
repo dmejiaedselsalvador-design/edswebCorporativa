@@ -101,7 +101,7 @@
             <!-- Logo -->
             <div class="flex items-center gap-3">
                 <img src="{{ asset('img/eds-manufacturing_logo.png') }}" class="h-12" alt="EDS">
-                <span class="font-bold text-primary text-lg hidden sm:block">EDS Manufacturing, Inc.</span>
+                <span class="font-bold text-primary text-lg hidden sm:block">Inc.</span>
             </div>
 
             <!-- Desktop Nav -->
@@ -348,21 +348,32 @@ function sendMessage(customMessage = null) {
 function typeWriter(elementId, text) {
     const element = document.getElementById(elementId);
     let i = 0;
-    const speed = 15; // Milisegundos entre letras (ajusta a tu gusto)
+    const speed = 15;
     const chatbox = document.getElementById('chatbox');
 
     function type() {
         if (i < text.length) {
-            // Manejo de etiquetas <br> para que no se escriban letra por letra
-            if (text.substring(i, i + 4) === "<br>") {
-                element.innerHTML += "<br>";
-                i += 4;
+            // DETECTAR INICIO DE CUALQUIER ETIQUETA HTML ( <br>, <b>, </b>, etc.)
+            if (text.charAt(i) === "<") {
+                // Buscamos dónde termina la etiqueta actual
+                let closingTagIndex = text.indexOf(">", i);
+                if (closingTagIndex !== -1) {
+                    // Copiamos toda la etiqueta de un solo golpe al innerHTML
+                    element.innerHTML += text.substring(i, closingTagIndex + 1);
+                    // Saltamos el índice hasta después del ">"
+                    i = closingTagIndex + 1;
+                } else {
+                    // Por si acaso hay un "<" suelto que no cierra
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                }
             } else {
+                // Si no es una etiqueta, escribe la letra normal
                 element.innerHTML += text.charAt(i);
                 i++;
             }
 
-            // Mantiene el scroll abajo mientras escribe
+            // Mantiene el scroll abajo
             chatbox.scrollTop = chatbox.scrollHeight;
 
             setTimeout(type, speed);

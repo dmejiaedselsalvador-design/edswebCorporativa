@@ -103,6 +103,17 @@
                     </div>
 
                     <div class="space-y-4">
+   @if($product->ebay_url)
+    <a href="{{ $product->ebay_url }}" target="_blank"
+       class="group w-full inline-flex items-center justify-center px-4 py-4 border-2 border-gray-300 bg-white text-gray-700 text-sm font-black rounded-xl hover:bg-gray-50 hover:border-gray-400 transition-all gap-3 shadow-sm">
+        
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg" 
+             class="h-4 opacity-90 group-hover:opacity-100 transition-opacity" 
+             alt="eBay">
+             
+        <span>Buy this item on eBay</span>
+    </a>
+@endif
                         <a href="{{ route('web.contact', ['ref' => $product->codigo]) }}"
                            class="group relative flex w-full items-center justify-center bg-blue-900 text-white py-4 px-6 rounded-xl font-bold text-lg hover:bg-blue-800 transition-all shadow-lg hover:shadow-blue-200">
                             <span>Request Quote / Inquiry</span>

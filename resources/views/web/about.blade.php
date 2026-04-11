@@ -334,14 +334,6 @@
                     Quality Rating
                 </div>
             </div>
-            <div>
-                <div class="text-4xl md:text-5xl font-black mb-2">15+</div>
-                <div
-                    class="text-sm font-medium uppercase tracking-widest text-slate-300"
-                >
-                    Industry Patents
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -349,7 +341,6 @@
 <!-- Global Locations -->
 <section class="py-24 bg-white dark:bg-slate-950">
     <div class="max-w-7xl mx-auto px-6">
-        <!-- HEADER -->
         <div class="text-center mb-20">
             <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-4">
                 Strategic Global Presence
@@ -360,14 +351,14 @@
             </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-10">
-            <!-- USA -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div
                 class="group rounded-2xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
                 <div class="relative h-64 overflow-hidden">
                     <img
-                        src="{{ asset('img\home\m3nogales-plant.jpeg') }}"
+                        src="{{ asset('img/sites/nogales_hq.jpg') }}"
+                        alt="EDS Nogales Corporate Headquarters"
                         class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
                     />
 
@@ -380,12 +371,53 @@
                     <h3
                         class="text-xl font-bold text-slate-900 dark:text-white mb-2"
                     >
-                        M3
+                        EDS Nogales
                     </h3>
 
                     <p class="text-sm text-slate-500 mb-4">
-                        <strong>Engineering & Leadership:</strong> Headquarters
-                        focused on product design, R&D, and global strategy.
+                        <strong>Corporate Leadership:</strong> Global
+                        headquarters focused on strategic management, warehouse
+                        operations, and global logistics.
+                    </p>
+
+                    <div
+                        class="flex gap-2 flex-wrap text-xs text-primary font-semibold"
+                    >
+                        <span>Corporate</span>
+                        <span>•</span>
+                        <span>Management</span>
+                        <span>•</span>
+                        <span>Warehouse</span>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="group rounded-2xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition duration-500 hover:-translate-y-2 hover:shadow-2xl"
+            >
+                <div class="relative h-64 overflow-hidden">
+                    <img
+                        src="{{ asset('img/home/m3nogales-plant.jpeg') }}"
+                        alt="M3 Nogales Engineering Plant"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                    />
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"
+                    ></div>
+                </div>
+
+                <div class="p-6">
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2"
+                    >
+                        M3 Plant
+                    </h3>
+
+                    <p class="text-sm text-slate-500 mb-4">
+                        <strong>Engineering & Production Hub:</strong>
+                        Integrated facility focused on advanced engineering,
+                        R&D, full-scale production, and operational quality.
                     </p>
 
                     <div
@@ -395,18 +427,22 @@
                         <span>•</span>
                         <span>R&D</span>
                         <span>•</span>
-                        <span>Management</span>
+                        <span>Production</span>
+                        <span>•</span>
+                        <span>Quality</span>
+                        <span>•</span>
+                        <span>Operations</span>
                     </div>
                 </div>
             </div>
 
-            <!-- MEXICO -->
             <div
                 class="group rounded-2xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
                 <div class="relative h-64 overflow-hidden">
                     <img
                         src="{{ asset('img/sites/magadalena_01.jpg') }}"
+                        alt="Magdalena Manufacturing Plant"
                         class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
                     />
 
@@ -423,30 +459,34 @@
                     </h3>
 
                     <p class="text-sm text-slate-500 mb-4">
-                        <strong>Manufacturing Hub:</strong> High-volume
-                        production facility focused on precision assembly and
-                        efficiency.
+                        <strong>Engineering & Production Hub:</strong>
+                        Integrated facility focused on advanced engineering,
+                        R&D, full-scale production, and operational quality.
                     </p>
 
                     <div
                         class="flex gap-2 flex-wrap text-xs text-primary font-semibold"
                     >
-                        <span>Assembly</span>
+                        <span>Engineering</span>
+                        <span>•</span>
+                        <span>R&D</span>
                         <span>•</span>
                         <span>Production</span>
                         <span>•</span>
-                        <span>Logistics</span>
+                        <span>Quality</span>
+                        <span>•</span>
+                        <span>Operations</span>
                     </div>
                 </div>
             </div>
 
-            <!-- EL SALVADOR -->
             <div
                 class="group rounded-2xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
                 <div class="relative h-64 overflow-hidden">
                     <img
                         src="{{ asset('img/home/eds-salvador-plant.jpeg') }}"
+                        alt="El Salvador specialized assembly plant"
                         class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
                     />
 
@@ -463,9 +503,9 @@
                     </h3>
 
                     <p class="text-sm text-slate-500 mb-4">
-                        <strong>Production Facility:</strong> Specialized in
-                        wire harness assembly with skilled workforce and quality
-                        focus.
+                        <strong>Specialized Assembly:</strong> High-efficiency
+                        facility focused on wire harness assembly with skilled
+                        workforce and quality validation.
                     </p>
 
                     <div
@@ -510,7 +550,7 @@
                     Contact Us
                 </a>
                 <a
-                    href="{{ route('web.videoProcess') }}"
+                    href="#"
                     class="inline-flex items-center bg-primary border-2 border-white/20 text-white rounded-xl font-bold hover:bg-primary/90 hover:border-white/40 transition-all shadow-lg overflow-hidden group"
                 >
                     <div

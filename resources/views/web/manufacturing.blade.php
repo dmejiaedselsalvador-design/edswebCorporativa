@@ -129,7 +129,9 @@
 
             <img
                 src="{{
-                    asset('img/machine_wire_automatice/wire_automatice_04.jpeg')
+                    asset(
+                        'img/machine_wire_automatice/Regenerada_MachineWire01.png'
+                    )
                 }}"
                 class="rounded-xl shadow-xl h-[400px] object-cover w-full"
             />
