@@ -133,6 +133,7 @@
                 <a href="{{ url('/') }}" class="py-2 border-b">Home</a>
                 <a href="{{ route('web.solutions') }}" class="py-2 border-b">Solution</a>
                 <a href="{{ route('web.about') }}" class="py-2 border-b">About</a>
+                <a href="{{ route('web.support') }}" class="py-2 border-b">Support</a>
                 <a href="{{ route('web.engineering') }}" class="py-2 border-b">Engineering</a>
                 <a href="{{ route('web.manufacturing') }}" class="py-2 border-b">Manufacturing</a>
                 <a href="{{ route('web.quality') }}" class="py-2 border-b">Quality</a>

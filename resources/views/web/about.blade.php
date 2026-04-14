@@ -357,7 +357,7 @@
             >
                 <div class="relative h-64 overflow-hidden">
                     <img
-                        src="{{ asset('img/sites/nogales_hq.jpg') }}"
+                        src="{{ asset('img/sites/plant_az.jpeg') }}"
                         alt="EDS Nogales Corporate Headquarters"
                         class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
                     />

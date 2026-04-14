@@ -59,6 +59,16 @@
     </a>
 
     <a
+        href="{{ route('web.support') }}"
+        class="text-sm font-medium transition-all px-3 py-1 rounded
+       {{ request()->routeIs('web.support')
+           ? 'bg-primary/20 text-primary font-bold border-b-2 border-primary scale-105'
+           : 'text-slate-600 hover:text-primary hover:bg-primary/10 dark:text-slate-300 dark:hover:text-white dark:hover:bg-primary/20' }}"
+    >
+        Support
+    </a>
+
+    <a
         href="{{ route('product.list') }}"
         class="text-sm font-medium transition-all px-3 py-1 rounded
        {{ request()->routeIs('product.list')

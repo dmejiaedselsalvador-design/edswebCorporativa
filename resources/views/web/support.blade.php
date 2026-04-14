@@ -1,220 +1,140 @@
-@extends('layouts.app') @section('content')
-<div class="bg-gray-50 min-h-screen pb-20">
-    <div class="bg-gradient-to-r from-blue-800 to-indigo-700 py-20 shadow-lg">
-        <div class="container mx-auto px-6">
+@extends('layouts.app')
+
+@section('content')
+<div class="bg-gray-50 min-h-screen pb-20 text-gray-900 font-sans">
+
+    <div class="relative pt-32 pb-48 overflow-hidden bg-[#0a192f]">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-400 blur-[120px] rounded-full"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-cyan-400 blur-[120px] rounded-full"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-4xl">
-                <h1
-                    class="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight"
-                >
-                    Support Center
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-300 text-xs font-bold uppercase tracking-[0.2em] mb-8">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-400"></span>
+                    </span>
+                    Operational Support
+                </div>
+
+                <h1 class="text-6xl md:text-8xl font-black mb-8 italic tracking-tighter text-white leading-none">
+                    SUPPORT <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">CENTER.</span>
                 </h1>
-                <p
-                    class="text-blue-100 text-lg md:text-xl font-light max-w-2xl"
-                >
-                    Global Sales, Engineering and Corporate Resources for EDS
-                    Manufacturing partners.
+
+                <p class="text-blue-100/70 text-xl md:text-2xl font-light max-w-2xl leading-relaxed border-l-2 border-blue-500/30 pl-6">
+                    Global Sales, Engineering, and Corporate Resources for
+                    <span class="text-white font-semibold">EDS Manufacturing</span> strategic partners worldwide.
                 </p>
             </div>
         </div>
     </div>
 
-    <div class="container mx-auto px-6 -mt-12">
+    <div class="container mx-auto px-6 -mt-24 relative z-20">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
             <div class="space-y-6">
-                <div
-                    class="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 transform hover:-translate-y-1 transition duration-300"
-                >
-                    <div class="flex items-center gap-4 mb-6">
-                        <div
-                            class="bg-blue-600 p-3 rounded-2xl text-white shadow-blue-200 shadow-lg"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                />
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                />
-                            </svg>
-                        </div>
+                <div class="bg-white rounded-[2.5rem] border border-gray-100 p-8 shadow-2xl">
+                    <h3 class="font-bold text-blue-600 text-xs uppercase tracking-widest mb-6 flex items-center gap-2">
+                        <span class="w-8 h-[1px] bg-blue-200"></span>
+                        Global Headquarters
+                    </h3>
+                    <div class="space-y-6">
                         <div>
-                            <h3
-                                class="font-bold text-gray-900 text-xl text-balance"
-                            >
-                                Global Headquarters
-                            </h3>
-                        </div>
-                    </div>
-
-                    <div class="space-y-4 text-gray-600">
-                        <p class="leading-relaxed">
-                            <span class="block font-semibold text-gray-900"
-                                >Nogales Office</span
-                            >
-                            765 N. Target Range Rd.,<br />
-                            Nogales, AZ 85621, USA
-                        </p>
-
-                        <div class="pt-4 border-t border-gray-100 space-y-3">
-                            <div class="flex items-center gap-3">
-                                <i class="icon-phone text-blue-600"></i>
-                                <span class="text-sm"
-                                    ><strong>Phone:</strong> (520)
-                                    287-9711</span
-                                >
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i class="icon-envelope text-blue-600"></i>
-                                <span class="text-sm"
-                                    ><strong>Email:</strong>
-                                    sales@edsmanufacturing.com</span
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <a
-                        href="https://www.google.com/maps/dir/?api=1&destination=765+N+Target+Range+Rd+Nogales+AZ+85621"
-                        target="_blank"
-                        class="mt-6 flex items-center justify-center gap-2 w-full bg-gray-50 hover:bg-blue-50 text-blue-600 font-bold py-3 rounded-xl transition border border-dashed border-blue-200"
-                    >
-                        Get Directions
-                    </a>
-                </div>
-
-                <div
-                    class="bg-slate-900 rounded-3xl shadow-2xl p-8 text-white relative overflow-hidden group"
-                >
-                    <div class="relative z-10">
-                        <h3 class="font-bold text-xl mb-2">Corporate E-Mail</h3>
-                        <p class="text-slate-400 text-sm mb-6">
-                            Internal access for EDS Corporate mail server.
-                        </p>
-                        <a
-                            href="https://eds-2013mail.edsmanufacturing.com/"
-                            target="_blank"
-                            class="block text-center bg-white text-slate-900 hover:bg-blue-500 hover:text-white py-4 rounded-2xl font-bold transition-all shadow-lg active:scale-95"
-                        >
-                            Login to Webmail
-                        </a>
-                    </div>
-                    <div
-                        class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition duration-700"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="h-32 w-32"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                            />
-                        </svg>
-                    </div>
-                </div>
-
-                <div
-                    class="bg-white rounded-3xl shadow-sm border border-gray-100 p-6"
-                >
-                    <h4
-                        class="text-xs font-black text-gray-400 uppercase tracking-widest mb-4"
-                    >
-                        Downloads
-                    </h4>
-                    <a
-                        href="{{
-                            asset(
-                                'documents/EDS Terms and Conditions of Purchase Sept 2020.pdf'
-                            )
-                        }}"
-                        class="flex items-center gap-3 p-3 rounded-2xl hover:bg-red-50 text-gray-700 hover:text-red-700 transition group border border-transparent hover:border-red-100"
-                    >
-                        <div
-                            class="bg-red-100 p-2 rounded-lg text-red-600 group-hover:bg-red-200"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-5 w-5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-                                />
-                            </svg>
-                        </div>
-                        <span class="text-sm font-bold uppercase tracking-tight"
-                            >Terms & Conditions</span
-                        >
-                    </a>
-                </div>
-            </div>
-
-            <div class="lg:col-span-2 space-y-6">
-                <div
-                    class="bg-white rounded-[2rem] shadow-xl border border-gray-100 overflow-hidden flex flex-col h-full"
-                >
-                    <div
-                        class="p-8 border-b border-gray-50 flex flex-col md:flex-row md:items-center justify-between gap-4"
-                    >
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900">
-                                Sales and Engineering Support
-                            </h2>
-                            <p class="text-gray-500 text-sm italic">
-                                Providing world-class harness solutions across
-                                North America.
+                            <p class="text-gray-950 font-bold text-2xl mb-2 tracking-tight">Nogales Office</p>
+                            <p class="text-gray-500 text-sm leading-relaxed font-medium">
+                                765 N. Target Range Rd.,<br />
+                                Nogales, AZ 85621, USA
                             </p>
                         </div>
-                        <span
-                            class="inline-flex items-center px-4 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-100 uppercase tracking-tighter"
-                        >
-                            Active Support
-                        </span>
+
+                    </div>
+                </div>
+
+                <a href="{{ route('terms') }}" class="flex items-center justify-between p-6 rounded-2xl bg-white border border-gray-100 hover:border-blue-300 hover:bg-blue-50 transition-all group shadow-xl">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-blue-100 p-3 rounded-xl text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-xs font-black text-gray-400 uppercase tracking-[0.2em] mb-0.5">Downloads</p>
+                            <p class="text-sm font-bold text-gray-900">Terms & Conditions</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="lg:col-span-2 space-y-8">
+                <div class="bg-white rounded-[2.5rem] border border-gray-100 p-8 shadow-2xl">
+                    <div class="mb-8 border-b border-gray-100 pb-6">
+                        <h2 class="text-2xl font-black italic tracking-tighter text-gray-950 uppercase">Sales & Engineering Support</h2>
+                        <p class="text-blue-700 text-xs font-bold uppercase tracking-widest mt-1">U.S. National Coverage</p>
                     </div>
 
-                    <div class="flex-1 relative min-h-[500px] bg-gray-100">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                        @php
+                            $locations = [
+                                ['label' => 'Nogales, AZ / Tucson, AZ', 'query' => '765 N. Target Range Rd., Nogales, AZ 85621', 'color' => 'bg-[#76c067]'],
+                                ['label' => 'Las Vegas, NV', 'query' => 'Las Vegas, NV', 'color' => 'bg-[#438a8a]'],
+                                ['label' => 'Chicago, IL', 'query' => 'Chicago, IL', 'color' => 'bg-[#8ba4c7]'],
+                                ['label' => 'Fort Wayne, IN', 'query' => 'Fort Wayne, IN', 'color' => 'bg-[#d2edc4]'],
+                                ['label' => 'Marion, OH', 'query' => 'Marion, OH', 'color' => 'bg-[#a6cfe3]'],
+                                ['label' => 'Detroit, MI', 'query' => 'Detroit, MI', 'color' => 'bg-[#76c067]'],
+                            ];
+                        @endphp
+
+                        @foreach($locations as $index => $loc)
+                        <button
+                            type="button"
+                            onclick="updateMap('{{ $loc['query'] }}', this)"
+                            class="location-btn text-left bg-gray-50 border border-gray-100 p-5 rounded-2xl transition-all duration-300 group {{ $index === 0 ? 'ring-2 ring-blue-500 bg-blue-50 shadow-lg scale-[1.02]' : 'hover:bg-gray-100' }}">
+                            <div class="flex items-center gap-3">
+                                <div class="w-3 h-3 rounded-full {{ $loc['color'] }} shadow-sm"></div>
+                                <span class="text-gray-950 font-bold text-sm tracking-tight group-hover:text-blue-800">
+                                    {{ $loc['label'] }}
+                                </span>
+                            </div>
+                        </button>
+                        @endforeach
+                    </div>
+
+                    <div class="rounded-[2rem] overflow-hidden border border-gray-100 h-[450px] relative shadow-inner bg-gray-100">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3419.664426550785!2d-110.95074212356525!3d31.341147555940026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86d69f046460338f%3A0xc3f1f31f50a463be!2s765%20N%20Target%20Range%20Rd%2C%20Nogales%2C%20AZ%2085621!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
-                            class="absolute inset-0 w-full h-full border-0"
+                            id="dynamic-map"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
                             allowfullscreen=""
                             loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                        >
+                            src="https://maps.google.com/maps?q={{ urlencode($locations[0]['query']) }}&t=&z=13&ie=UTF8&iwloc=&output=embed">
                         </iframe>
-                    </div>
-
-                    <div class="p-6 bg-gray-50 text-center">
-                        <p
-                            class="text-xs text-gray-400 font-medium uppercase tracking-widest"
-                        >
-                            Strategic Location • Nogales Arizona Logistics Hub
-                        </p>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
+
+<script>
+    function updateMap(query, element) {
+        const mapIframe = document.getElementById('dynamic-map');
+
+        // 1. Actualizar el mapa
+        const newUrl = "https://maps.google.com/maps?q=" + encodeURIComponent(query) + "&t=&z=13&ie=UTF8&iwloc=&output=embed";
+        mapIframe.src = newUrl;
+
+        // 2. Manejo de estados visuales de los botones (Tarjetas)
+        document.querySelectorAll('.location-btn').forEach(btn => {
+            // Resetear todos los botones a su estado normal
+            btn.classList.remove('ring-2', 'ring-blue-500', 'bg-blue-50', 'shadow-lg', 'scale-[1.02]');
+            btn.classList.add('bg-gray-50', 'hover:bg-gray-100');
+        });
+
+        // Aplicar estado "Activo" al botón presionado
+        element.classList.add('ring-2', 'ring-blue-500', 'bg-blue-50', 'shadow-lg', 'scale-[1.02]');
+        element.classList.remove('bg-gray-50', 'hover:bg-gray-100');
+    }
+</script>
 @endsection
