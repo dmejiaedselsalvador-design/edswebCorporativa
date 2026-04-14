@@ -788,48 +788,50 @@
 </section>
 
 <!-- CERTIFICATIONS -->
-<section class="py-24 bg-slate-50 dark:bg-slate-950">
+<section
+    class="py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-500"
+>
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-black text-primary mb-4">
-                Certifications & Compliance
+        <div class="text-center mb-20">
+            <h2
+                class="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-6"
+            >
+                Certifications & <span class="text-primary">Compliance</span>
             </h2>
-            <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                Our commitment to quality, safety, and global manufacturing
-                standards.
+            <div class="h-1.5 w-20 bg-primary mx-auto rounded-full mb-6"></div>
+            <p
+                class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-lg"
+            >
+                Our commitment to global excellence, environmental
+                responsibility, and high-standard manufacturing processes.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-            <!-- CARD 1 -->
+        <div class="flex flex-wrap justify-center gap-8 lg:gap-10">
             <div
-                class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(2,6,23,0.25)]"
+                class="group relative w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-2rem)] xl:w-[calc(20%-2rem)] min-w-[260px] overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
                 <div
-                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 opacity-0 group-hover:opacity-100 transition"
+                    class="absolute top-0 left-0 w-full h-1.5 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"
                 ></div>
-
-                <div class="p-6">
-                    <!-- ICON -->
+                <div class="p-8 flex flex-col h-full text-center">
                     <div class="mb-6 flex justify-center">
                         <div
-                            class="h-16 w-16 flex items-center justify-center rounded-xl bg-primary/10 text-primary text-2xl font-bold transition duration-500 group-hover:scale-110 group-hover:shadow-[0_10px_25px_rgba(11,43,75,0.3)]"
+                            class="h-16 w-16 flex items-center justify-center rounded-2xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 text-2xl font-black transition duration-500 group-hover:scale-110 group-hover:rotate-3"
                         >
                             ISO
                         </div>
                     </div>
-
                     <h3
-                        class="text-lg font-bold text-slate-900 dark:text-white text-center"
+                        class="text-xl font-bold text-slate-900 dark:text-white"
                     >
-                        ISO 9001
+                        ISO 9001:2015
                     </h3>
                     <p
-                        class="text-sm text-slate-500 dark:text-slate-400 text-center mt-2"
+                        class="text-sm text-slate-500 dark:text-slate-400 mt-3 flex-grow leading-relaxed"
                     >
-                        Quality Management System
+                        Quality Management System Standards
                     </p>
-
                     <a
                         href="{{
                             asset(
@@ -837,47 +839,49 @@
                             )
                         }}"
                         target="_blank"
-                        class="mt-6 flex items-center justify-center gap-2 text-primary font-semibold transition-all group hover:text-blue-400"
+                        class="mt-8 inline-flex items-center justify-center gap-2 text-primary font-bold hover:gap-3 transition-all"
                     >
-                        <!-- Icono PDF -->
+                        <span>View PDF</span>
                         <svg
-                            class="w-5 h-5 transition-colors duration-300"
-                            fill="currentColor"
+                            class="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
                             viewBox="0 0 24 24"
                         >
                             <path
-                                d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM15 3.5V8h4.5L15 3.5z"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                             />
                         </svg>
-                        View Certificate
                     </a>
                 </div>
             </div>
 
-            <!-- CARD 2 -->
             <div
-                class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(2,6,23,0.25)]"
+                class="group relative w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-2rem)] xl:w-[calc(20%-2rem)] min-w-[260px] overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
                 <div
-                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 opacity-0 group-hover:opacity-100 transition"
+                    class="absolute top-0 left-0 w-full h-1.5 bg-slate-700 opacity-0 group-hover:opacity-100 transition-opacity"
                 ></div>
-                <div class="p-6">
+                <div class="p-8 flex flex-col h-full text-center">
                     <div class="mb-6 flex justify-center">
                         <div
-                            class="h-16 w-16 flex items-center justify-center rounded-xl bg-primary/10 text-primary text-xl font-bold transition duration-500 group-hover:scale-110 group-hover:shadow-[0_10px_25px_rgba(11,43,75,0.3)]"
+                            class="h-16 w-16 flex items-center justify-center rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-2xl font-black transition duration-500 group-hover:scale-110 group-hover:rotate-3"
                         >
                             IATF
                         </div>
                     </div>
                     <h3
-                        class="text-lg font-bold text-slate-900 dark:text-white text-center"
+                        class="text-xl font-bold text-slate-900 dark:text-white"
                     >
                         IATF 16949
                     </h3>
                     <p
-                        class="text-sm text-slate-500 dark:text-slate-400 text-center mt-2"
+                        class="text-sm text-slate-500 dark:text-slate-400 mt-3 flex-grow leading-relaxed"
                     >
-                        Automotive Quality Standard
+                        Automotive Quality Management System
                     </p>
                     <a
                         href="{{
@@ -886,105 +890,174 @@
                             )
                         }}"
                         target="_blank"
-                        class="mt-6 flex items-center justify-center gap-2 text-primary font-semibold transition-all group hover:text-blue-400"
+                        class="mt-8 inline-flex items-center justify-center gap-2 text-primary font-bold hover:gap-3 transition-all"
                     >
+                        <span>View PDF</span>
                         <svg
-                            class="w-5 h-5 transition-colors duration-300"
-                            fill="currentColor"
+                            class="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
                             viewBox="0 0 24 24"
                         >
                             <path
-                                d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM15 3.5V8h4.5L15 3.5z"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                             />
                         </svg>
-                        View Certificate
                     </a>
                 </div>
             </div>
 
-            <!-- CARD 3 -->
             <div
-                class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(2,6,23,0.25)]"
+                class="group relative w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-2rem)] xl:w-[calc(20%-2rem)] min-w-[260px] overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
                 <div
-                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 opacity-0 group-hover:opacity-100 transition"
+                    class="absolute top-0 left-0 w-full h-1.5 bg-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity"
                 ></div>
-                <div class="p-6">
+                <div class="p-8 flex flex-col h-full text-center">
                     <div class="mb-6 flex justify-center">
                         <div
-                            class="h-16 w-16 flex items-center justify-center rounded-xl bg-primary/10 text-primary text-xl font-bold transition duration-500 group-hover:scale-110 group-hover:shadow-[0_10px_25px_rgba(11,43,75,0.3)]"
+                            class="h-16 w-16 flex items-center justify-center rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 text-2xl font-black transition duration-500 group-hover:scale-110 group-hover:rotate-3"
                         >
                             ISO
                         </div>
                     </div>
                     <h3
-                        class="text-lg font-bold text-slate-900 dark:text-white text-center"
+                        class="text-xl font-bold text-slate-900 dark:text-white"
                     >
                         ISO 14001
                     </h3>
                     <p
-                        class="text-sm text-slate-500 dark:text-slate-400 text-center mt-2"
+                        class="text-sm text-slate-500 dark:text-slate-400 mt-3 flex-grow leading-relaxed"
                     >
-                        Environmental Management
+                        Environmental Management Standards
                     </p>
                     <a
-                        href="{{ asset('certs\ISO14001 EDS-EK.pdf') }}"
+                        href="{{
+                            asset(
+                                'certs/cert2026/CertificadoEmaGA-2020-0046-ISO14001-IN_2026-01-26.pdf'
+                            )
+                        }}"
                         target="_blank"
-                        class="mt-6 flex items-center justify-center gap-2 text-primary font-semibold transition-all group hover:text-blue-400"
+                        class="mt-8 inline-flex items-center justify-center gap-2 text-primary font-bold hover:gap-3 transition-all"
                     >
+                        <span>View PDF</span>
                         <svg
-                            class="w-5 h-5 transition-colors duration-300"
-                            fill="currentColor"
+                            class="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
                             viewBox="0 0 24 24"
                         >
                             <path
-                                d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM15 3.5V8h4.5L15 3.5z"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                             />
                         </svg>
-                        View Certificate
                     </a>
                 </div>
             </div>
 
-            <!-- CARD 4 -->
             <div
-                class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(2,6,23,0.25)]"
+                class="group relative w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-2rem)] xl:w-[calc(20%-2rem)] min-w-[260px] overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
                 <div
-                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 opacity-0 group-hover:opacity-100 transition"
+                    class="absolute top-0 left-0 w-full h-1.5 bg-amber-500 opacity-0 group-hover:opacity-100 transition-opacity"
                 ></div>
-                <div class="p-6">
+                <div class="p-8 flex flex-col h-full text-center">
                     <div class="mb-6 flex justify-center">
                         <div
-                            class="h-16 w-16 flex items-center justify-center rounded-xl bg-primary/10 text-primary text-xl font-bold transition duration-500 group-hover:scale-110 group-hover:shadow-[0_10px_25px_rgba(11,43,75,0.3)]"
+                            class="h-16 w-16 flex items-center justify-center rounded-2xl bg-amber-50 dark:bg-amber-900/20 text-amber-600 text-2xl font-black transition duration-500 group-hover:scale-110 group-hover:rotate-3"
+                        >
+                            ISO
+                        </div>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white"
+                    >
+                        ISO 17025
+                    </h3>
+                    <p
+                        class="text-sm text-slate-500 dark:text-slate-400 mt-3 flex-grow leading-relaxed"
+                    >
+                        Testing & Calibration Laboratories <br />
+                        <span
+                            class="font-semibold text-slate-700 dark:text-slate-300"
+                            >Certificate of Accreditation</span
+                        >
+                    </p>
+                    <a
+                        href="{{
+                            asset(
+                                'certs/cert2026/ISO-IEC-17025-(L24-557)-EDS-Manufacturing-Testing.pdf'
+                            )
+                        }}"
+                        target="_blank"
+                        class="mt-8 inline-flex items-center justify-center gap-2 text-primary font-bold hover:gap-3 transition-all"
+                    >
+                        <span>View PDF</span>
+                        <svg
+                            class="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="group relative w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-2rem)] xl:w-[calc(20%-2rem)] min-w-[260px] overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+            >
+                <div
+                    class="absolute top-0 left-0 w-full h-1.5 bg-red-600 opacity-0 group-hover:opacity-100 transition-opacity"
+                ></div>
+                <div class="p-8 flex flex-col h-full text-center">
+                    <div class="mb-6 flex justify-center">
+                        <div
+                            class="h-16 w-16 flex items-center justify-center rounded-2xl bg-red-50 dark:bg-red-900/20 text-red-600 text-xl font-black transition duration-500 group-hover:scale-110 group-hover:rotate-3"
                         >
                             CTPAT
                         </div>
                     </div>
                     <h3
-                        class="text-lg font-bold text-slate-900 dark:text-white text-center"
+                        class="text-xl font-bold text-slate-900 dark:text-white"
                     >
                         CTPAT Certified
                     </h3>
                     <p
-                        class="text-sm text-slate-500 dark:text-slate-400 text-center mt-2"
+                        class="text-sm text-slate-500 dark:text-slate-400 mt-3 flex-grow leading-relaxed"
                     >
-                        Supply Chain Security
+                        Supply Chain Security Compliance
                     </p>
                     <a
                         href="{{ route('certified') }}"
-                        class="mt-6 flex items-center justify-center gap-2 text-primary font-semibold transition-all group hover:text-blue-400"
+                        class="mt-8 inline-flex items-center justify-center gap-2 text-primary font-bold hover:gap-3 transition-all"
                     >
+                        <span>Learn More</span>
                         <svg
-                            class="w-5 h-5 transition-colors duration-300"
-                            fill="currentColor"
+                            class="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
                             viewBox="0 0 24 24"
                         >
                             <path
-                                d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM15 3.5V8h4.5L15 3.5z"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6"
                             />
                         </svg>
-                        View Certificate
                     </a>
                 </div>
             </div>
@@ -1016,7 +1089,10 @@
 </section>
 
 <!-- Locations Section -->
-<section id="locations" class="py-24 bg-slate-950 text-white">
+<section
+    id="locations"
+    class="py-24 text-primary bg-slate-50 transition-colors duration-500"
+>
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-extrabold tracking-tight sm:text-5xl">
