@@ -406,6 +406,7 @@ function quickReply(text) {
 </script>
 
 <script>
+    //es para el boton back to top
     const scrollBtn = document.getElementById("scrollToTopBtn");
 
     // Mostrar el botón cuando el usuario baje 300px

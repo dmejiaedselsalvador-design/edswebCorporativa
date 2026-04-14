@@ -52,38 +52,34 @@
 
 <!-- HERO -->
 
-<section class="relative overflow-hidden bg-primary py-20 lg:py-32">
+<section class="relative overflow-hidden bg-[#0b2b4b] py-20 lg:py-32">
     <div class="absolute inset-0">
-        <!-- IMAGEN MÁS VIVA img/quality/automotive-harness.jpg -->
-
         <img
             id="hero-bg"
             src="{{ asset('img/automotive/car_hero.png') }}"
             alt="Automotive Wiring Harness"
-            class="w-full h-full object-cover object-center lg:object-[center_right] transition-transform duration-700 brightness-90 contrast-105"
+            class="w-full h-full object-cover transition-transform duration-700 brightness-90 contrast-105"
             style="
                 image-rendering: -webkit-optimize-contrast;
                 transform: scale(1.01);
+                /* Ajuste clave: Mantiene el 80% de la imagen (donde está el carro) siempre a la vista */
+                object-position: 80% center;
             "
         />
 
-        <!-- OVERLAY  -->
         <div
-            class="absolute inset-0 bg-gradient-to-r from-[#0b2b4b]/80 via-[#0b2b4b]/50 to-transparent"
+            class="absolute inset-0 bg-gradient-to-r from-[#0b2b4b] via-[#0b2b4b]/60 to-transparent"
         ></div>
 
-        <!-- EFECTO DE PROFUNDIDAD (GRADIENT LIGHT) -->
         <div class="absolute inset-0">
             <div
                 class="absolute top-20 right-20 w-[500px] h-[500px] bg-blue-400/20 blur-[120px] rounded-full"
             ></div>
-
             <div
                 class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-300/10 blur-[120px] rounded-full"
             ></div>
         </div>
 
-        <!-- GRID TECNOLÓGICO SUTIL -->
         <div
             class="absolute inset-0 opacity-[0.04]"
             style="
@@ -110,7 +106,6 @@
 
             <p class="mt-6 text-lg text-blue-100">
                 World-class supplier of wire harnesses <br />
-
                 <span
                     id="typing-text"
                     class="border-r-2 border-blue-300 pr-1"
@@ -118,13 +113,6 @@
             </p>
 
             <div class="mt-8 flex gap-4">
-                <!-- Botón secundario: Our Services
-                    <a href="#services"
-                        class="border border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-400 transition">
-                        Our Services
-                    </a>
--->
-                <!-- Botón principal: Contact -->
                 <a
                     href="{{ route('web.contact') }}"
                     class="bg-white text-primary px-6 py-3 rounded-lg font-bold hover:bg-blue-400 transition"
