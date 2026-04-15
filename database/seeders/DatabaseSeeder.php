@@ -18,10 +18,11 @@ class DatabaseSeeder extends Seeder
 
 
      $this->call([
+      RolesAndPermissionsSeeder::class,
             UserSeeder::class,
             CategorySeeder::class,
             ChatbotResponseSeeder::class, // El que acabamos de crear
-            RolesAndPermissionsSeeder::class,
+
         ]);
     }
 }
