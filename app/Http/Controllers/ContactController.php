@@ -28,8 +28,8 @@ class ContactController extends Controller
          // Definimos los destinatarios en un arreglo
     $recipients = [
       //  'Trackersys@edsmanufacturing.com',
-      'AEstrada@edsmanufacturing.com', // correo de gerente de it
-      'sales@edsmanufacturing.com', // Correo principal de ventas
+     // 'AEstrada@edsmanufacturing.com', // correo de gerente de it
+    //  'sales@edsmanufacturing.com', // Correo principal de ventas
         'd.mejia@edssv.com' // Tu correo para monitorear la prueba
     ];
 
