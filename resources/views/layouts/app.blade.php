@@ -15,85 +15,20 @@
 
 
 
-    <!-- Tailwind (temporal, luego migrar a Vite) -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind (temporal, luego migrar a Vite) <script src="https://cdn.tailwindcss.com"></script> -->
+@vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#0b2b4b",
-                    },
-                    fontFamily: {
-                       sans: ["Inter", "sans-serif"]
-                    }
-                }
-            }
-        }
-    </script>
-<style>
-.user {
-    align-self: flex-end;
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
-    color: white;
-    padding: 10px 14px;
-    border-radius: 18px 18px 0 18px;
-    max-width: 75%;
-    font-size: 14px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.bot {
-    align-self: flex-start;
-    background: white;
-    padding: 10px 14px;
-    border-radius: 18px 18px 18px 0;
-    max-width: 75%;
-    font-size: 14px;
-    border: 1px solid #eee;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-#chatbox {
-    display: flex;
-    flex-direction: column;
-        }
-
-        /* Para pantallas pequeñas */
-@media (max-width: 768px) {
-    #chatContainer {
-        bottom: 10px !important;
-        right: 5% !important;
-        width: 90vw !important;
-        max-height: 70vh !important;
-    }
-
-    /* Ajusta el botón flotante */
-    button[onclick="toggleChat()"] {
-        bottom: 5px !important;
-        right: 5% !important;
-    }
-    #scrollToTopBtn {
-        bottom: 85px !important; /* Lo subimos un poco para que no choque con el botón del chat */
-        right: 5% !important;
-        width: 45px !important;
-        height: 45px !important;
-    }
-}
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
-</style>
+
+
 
 
 </head>

@@ -6,6 +6,64 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    /* Corregimos la repetición y dejamos Inter como principal */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Color oficial de EDS Manufacturing */
+    --color-primary: #0b2b4b;
 }
+
+/* Aquí abajo puedes pegar tus estilos del chat (.user, .bot, etc.) */
+
+
+.user {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 18px 18px 0 18px;
+    max-width: 75%;
+    font-size: 14px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.bot {
+    align-self: flex-start;
+    background: white;
+    padding: 10px 14px;
+    border-radius: 18px 18px 18px 0;
+    max-width: 75%;
+    font-size: 14px;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+#chatbox {
+    display: flex;
+    flex-direction: column;
+        }
+
+        /* Para pantallas pequeñas */
+@media (max-width: 768px) {
+    #chatContainer {
+        bottom: 10px !important;
+        right: 5% !important;
+        width: 90vw !important;
+        max-height: 70vh !important;
+    }
+
+    /* Ajusta el botón flotante */
+    button[onclick="toggleChat()"] {
+        bottom: 5px !important;
+        right: 5% !important;
+    }
+    #scrollToTopBtn {
+        bottom: 85px !important; /* Lo subimos un poco para que no choque con el botón del chat */
+        right: 5% !important;
+        width: 45px !important;
+        height: 45px !important;
+    }
+}
+
+
+
