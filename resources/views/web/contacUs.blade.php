@@ -27,12 +27,18 @@
             Send us a message and we’ll get back to you shortly.
         </p>
 
-        <form class="space-y-6">
+       <form action="{{ route('contact.send') }}" method="POST" class="space-y-6">
+   @csrf @if(session('success'))
+        <div class="bg-green-500 text-white p-3 rounded-xl text-center mb-4">
+            {{ session('success') }}
+        </div>
+    @endif
             <div>
                 <label class="block text-sm font-semibold text-white/90 mb-2"
                     >Full Name</label
                 >
                 <input
+                name="name"
                     required
                     type="text"
                     placeholder="John Doe"
@@ -47,6 +53,7 @@
                     required
                     type="email"
                     placeholder="email@example.com"
+                    name="email"
                     class="w-full px-5 py-3 rounded-2xl border border-white/40 bg-white/10 text-white placeholder-white/70 focus:border-blue-300 focus:ring-2 focus:ring-blue-300 outline-none transition-all shadow-md hover:shadow-lg"
                 />
             </div>
@@ -57,6 +64,7 @@
                 <textarea
                     placeholder="Write your message..."
                     rows="5"
+                    name="message"
                     class="w-full px-5 py-3 rounded-2xl border border-white/40 bg-white/10 text-white placeholder-white/70 focus:border-blue-300 focus:ring-2 focus:ring-blue-300 outline-none transition-all shadow-md hover:shadow-lg resize-none"
                 ></textarea>
             </div>

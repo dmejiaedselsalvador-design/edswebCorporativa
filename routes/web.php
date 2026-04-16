@@ -7,6 +7,7 @@ use App\Http\Controllers\IndustriesController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContactController;
 /// para el chatbot
 
 Route::post('/chatbot', [ChatbotController::class, 'ask'])->name('chatbot.ask');
@@ -26,6 +27,14 @@ Route::get('/about', function (){
 Route::get('/contact', function (){
     return view('web.contacUs');
 })->name('web.contact');
+
+///para enviar el formulario de contacto
+Route::post('/contact-us/send', [ContactController::class, 'send'])->name('contact.send');
+
+// para mostrar la página de agradecimiento después de enviar el formulario
+Route::get('/thank-you', function () {
+    return view('web.thanks');
+})->name('contact.thanks');
 
 Route::get('/engineering', function (){
     return view('web.engeneering');
@@ -122,3 +131,4 @@ Route::prefix('eds-dashboard')->middleware(['auth', 'user.active'])->group(funct
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
 
 });
+
