@@ -50,8 +50,8 @@ public function IndexProduct(Request $request)
         $search = $request->search;
         $query->where(function($q) use ($search) {
             $q->where('name', 'LIKE', "%{$search}%")
-              ->orWhere('description', 'LIKE', "%{$search}%")
-              ->orWhere('part_number', 'LIKE', "%{$search}%"); // Ajusta según tus columnas
+              ->orWhere('description', 'LIKE', "%{$search}%");
+            //  ->orWhere('part_number', 'LIKE', "%{$search}%"); // Ajusta según tus columnas
         });
     }
 
@@ -165,7 +165,7 @@ public function store(Request $request)
         'category_id' => 'nullable|exists:categories,id',
         'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
   'ebay_url' => 'nullable|url',
-        
+
 
     ]);
 
