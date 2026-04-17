@@ -6,55 +6,65 @@ use Illuminate\Http\Request;
 use App\Models\Lead;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Session; // Importante para manejar sesiones
 
 class ChatbotController extends Controller
 {
     /**
-     * Contexto maestro de EDS Manufacturing.
+     * Contexto maestro de EDS Manufacturing para la instrucción de sistema.
      */
-    private function getEDSContext()
-    {
-        return "
-        [CORE RULES]:
-        - Be concise. Use maximum 2-3 short paragraphs per response.
-        - Use bullet points for technical data.
-        - Focus on moving the conversation towards getting the User's Email.
+private function getEDSContext()
+{
+    return "
+    [CORE RULES]:
+    - Be concise. Use maximum 2-3 short paragraphs per response.
+    - Use bullet points for technical data to keep it scannable.
+    - Do not repeat your introduction if the user already knows you.
+    - Focus on moving the conversation towards getting the User's Email.
 
-        [IDENTITY]:
-        - Name: 'EDS-Bot'. Expert consultant for EDS Manufacturing.
-        - Intro (only once): 'I am EDS-Bot, your expert consultant from EDS Manufacturing.'
+    [IDENTITY]:
+    - Name: 'EDS-Bot'. Expert consultant for EDS Manufacturing.
+    - Intro (only once): 'I am EDS-Bot, your expert consultant from EDS Manufacturing.
 
-        [EDS QUICK FACTS]:
-        - Experience: World-class supplier since 1990. 9500% growth.
-        - Clients: Ford, GM, Tesla, Honeywell, Lucid, Magna.
-        - Infrastructure: HQ in Nogales, AZ; Production in Sonora & El Salvador.
+    - IMPORTANT: Always finish your sentences. If you are close to the word limit, prioritize a short closing over a long explanation.
 
-        [TECHNICAL SPECS]:
-        - Precision: 0.001mm using Komax/Artos automation.
-        - Quality: IATF 16949 / ISO 9001. 99.8% quality rating.
+    [EDS QUICK FACTS]:
+    - Experience: World-class supplier since 1990. No long-term debt. 9500% growth.
+    - Clients: Ford, GM, Tesla, Honeywell, Lucid, Magna.
+    - Infrastructure: 250,000 sq. ft. HQ in Nogales, AZ; Production in Sonora & El Salvador ($20M investment).
+    - Capacity: 50M+ units annually / 2,000+ employees.
 
-        [LANGUAGE]:
-        - Default: English. If user speaks Spanish, switch to Spanish immediately.
+    [TECHNICAL SPECS]:
+    - Precision: 0.001mm using Komax/Artos automation (95% automated).
+    - Design: CAD/3D (CATIA, NX, AutoCAD), BOM generation.
+    - Quality: IATF 16949 / ISO 9001. 99.8% quality rating.
+    - Testing: Continuity, Resistance, Hipot, and Pull-force.
 
-        [LEAD CAPTURE STRATEGY]:
-        - 1. Provide value first.
-        - 2. Ask for Name/Company if missing. Tags: [SET_NAME: value] [SET_COMPANY: value].
-        - 3. Ask for Email for a 'Dedicated Account Manager'.
-        ";
-    }
+    [LANGUAGE]:
+    - Default: English. If user speaks Spanish, switch to Spanish immediately.
 
-    public function ask(Request $request)
+    [LEAD CAPTURE STRATEGY]:
+    - Check [USER_CONTEXT] before asking for data.
+    - 1. Provide value first (answer the question).
+    - 2. Ask for Name/Company if missing. Use tags: [SET_NAME: value] [SET_COMPANY: value].
+    - 3. Ask for Email to assign a 'Dedicated Account Manager'.
+
+    [CLOSING]:
+    For pricing or project specifics: 'I would like to assign a Dedicated Account Manager to your project. Please provide your email to get started.'
+    ";
+}
+
+public function ask(Request $request)
     {
         $request->validate(['message' => 'required|string|max:500']);
         $rawMessage = trim($request->message);
 
-        // 1. RECUPERAR MEMORIA
+        // 1. RECUPERAR MEMORIA (De la sesión del navegador)
         $knownName = Session::get('chat_name');
         $knownCo = Session::get('chat_company');
         $knownEmail = Session::get('chat_email');
 
-        // 2. CAPTURA DE EMAIL (Si el usuario escribe un correo directamente)
+        // 2. CAPTURA DE EMAIL
         if (filter_var($rawMessage, FILTER_VALIDATE_EMAIL)) {
             Session::put('chat_email', $rawMessage);
             $knownEmail = $rawMessage;
@@ -62,65 +72,39 @@ class ChatbotController extends Controller
             try {
                 Lead::updateOrCreate(
                     ['email' => $rawMessage],
-                    [
-                        'full_name' => $knownName, 
-                        'company' => $knownCo, 
-                        'last_message' => $rawMessage
-                    ]
+                    ['full_name' => $knownName, 'company' => $knownCo, 'last_message' => $rawMessage]
                 );
-            } catch (\Exception $e) { 
-                Log::error("Error DB Lead: " . $e->getMessage()); 
-            }
+            } catch (\Exception $e) { Log::error("Error DB: " . $e->getMessage()); }
         }
 
-        $memory = "\n\n[USER_CONTEXT: Name=" . ($knownName ?? 'Unknown') . ", Co=" . ($knownCo ?? 'Unknown') . ", Email=" . ($knownEmail ?? 'Not Provided') . "]";
+        // 3. CONSTRUIR EL MENSAJE CON MEMORIA PARA GEMINI
+        // Esto hace que la IA "sepa" lo que ya le dijiste
+        $memory = "\n\n[CONTEXTO ACTUAL: User: ".($knownName ?? 'N/A').", Co: ".($knownCo ?? 'N/A').", Email: ".($knownEmail ?? 'N/A')."]";
 
         try {
             $apiKey = env('GEMINI_API_KEY');
-            // Usamos Gemini 2.0 Flash (basado en tus capacidades actuales)
-            $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" . $apiKey;
+            $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" . $apiKey;
 
-            // CONFIGURACIÓN DE SSL DINÁMICA
-            // En producción 'verify' debe ser true. En local (http) puede ser false si no tienes certificados.
-            $verifySSL = config('app.env') === 'production';
-
-            $responseIA = Http::withOptions(['verify' => $verifySSL])->post($url, [
+            $responseIA = Http::withOptions(['verify' => false])->post($url, [
                 'system_instruction' => ['parts' => [['text' => $this->getEDSContext() . $memory]]],
                 'contents' => [['role' => 'user', 'parts' => [['text' => $rawMessage]]]],
                 'generationConfig' => [
-                    'temperature' => 0.6,
-                    'maxOutputTokens' => 400,
-                ]
+    'temperature' => 0.6, // Un poco más bajo para que sea menos 'creativo' y más directo
+    'maxOutputTokens' => 300, // Límite físico de palabras
+]
             ]);
 
             $data = $responseIA->json();
+            $aiReply = $data['candidates'][0]['content']['parts'][0]['text'] ?? "I am having trouble connecting.";
 
-            if (isset($data['error'])) {
-                Log::error("Gemini API Error: ", $data['error']);
-                return response()->json(['reply' => "I'm experiencing technical difficulties. Please try again later."]);
-            }
-
-            $aiReply = $data['candidates'][0]['content']['parts'][0]['text'] ?? "I couldn't process that. How can I help you with EDS services?";
-
-            // 4. EXTRAER NOMBRE/EMPRESA USANDO REGEX
+            // 4. EXTRAER NOMBRE/EMPRESA SI LA IA LOS DETECTÓ
             if (preg_match('/\[SET_NAME:\s*(.*?)\]/i', $aiReply, $matches)) {
-                $knownName = trim($matches[1]);
-                Session::put('chat_name', $knownName);
+                Session::put('chat_name', trim($matches[1]));
                 $aiReply = preg_replace('/\[SET_NAME:.*?\]/i', '', $aiReply);
             }
-            
             if (preg_match('/\[SET_COMPANY:\s*(.*?)\]/i', $aiReply, $matches)) {
-                $knownCo = trim($matches[1]);
-                Session::put('chat_company', $knownCo);
+                Session::put('chat_company', trim($matches[1]));
                 $aiReply = preg_replace('/\[SET_COMPANY:.*?\]/i', '', $aiReply);
-            }
-
-            // Si ya tenemos email y detectamos nombre/empresa, actualizamos el Lead en DB
-            if ($knownEmail) {
-                Lead::where('email', $knownEmail)->update([
-                    'full_name' => $knownName,
-                    'company' => $knownCo
-                ]);
             }
 
             return response()->json([
@@ -128,8 +112,7 @@ class ChatbotController extends Controller
             ]);
 
         } catch (\Exception $e) {
-            Log::error("Chatbot Exception: " . $e->getMessage());
-            return response()->json(['reply' => "Service temporarily unavailable."]);
+            return response()->json(['reply' => "🚨 Error: " . $e->getMessage()]);
         }
     }
 }
