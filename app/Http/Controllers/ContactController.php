@@ -24,22 +24,25 @@ class ContactController extends Controller
             'message' => $request->message,
         ];
 
-        try {
-         // Definimos los destinatarios en un arreglo
-    $recipients = [
-      //  'Trackersys@edsmanufacturing.com',
-     'AEstrada@edsmanufacturing.com', // correo de gerente de it
-     'sales@edsmanufacturing.com', // Correo principal de ventas
-      //  'd.mejia@edssv.com' // Tu correo para monitorear la prueba
-    ];
+     try {
+            // Destinatario principal
+            $to = 'sales@edsmanufacturing.com';
+        
 
-    // Enviamos el correo a todos los de la lista
-    Mail::to($recipients)->send(new ContactForm($data));
+            // Destinatarios en copia (CC)
+            $cc = [
+                'AEstrada@edsmanufacturing.com', // Armando
+               //'d.mejia@edssv.com'             // Luis
+            ];
 
-   // return back()->with('success', 'Thank you! Your message has been sent.');
-   return redirect()->route('contact.thanks');
+            // Enviamos el correo con la estructura To y CC
+            Mail::to($to)
+                ->cc($cc)
+                ->send(new ContactForm($data));
+
+            return redirect()->route('contact.thanks');
+
         } catch (\Exception $e) {
-            // En caso de error de conexión con el servidor de correo
             return back()->with('error', 'Error: ' . $e->getMessage());
         }
     }
